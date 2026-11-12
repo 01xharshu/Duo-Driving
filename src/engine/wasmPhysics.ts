@@ -78,7 +78,7 @@ export class WasmPhysicsEngine {
     };
 
     try {
-      const { instance } = await WebAssembly.instantiate(wasmBytes, importObject);
+      const { instance } = await WebAssembly.instantiate(new Uint8Array(wasmBytes).buffer, importObject);
       this.stepFn = instance.exports.step as (dt: number) => void;
       this.ready = true;
     } catch (err) {
