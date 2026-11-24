@@ -5,19 +5,41 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
 # Dependencies
 node_modules
 .pnp
-.pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Build output
+# Build output & caches
 dist
 dist-ssr
 *.local
+.vite
+.cache
+coverage
+*.tsbuildinfo
 
-# Editor directories
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor & OS files
 .vscode/*
 !.vscode/extensions.json
 .idea
+.fleet
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 .DS_Store
+Thumbs.db
